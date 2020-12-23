@@ -11,10 +11,10 @@ void main() {
 }
 
 class desihes extends StatelessWidget {
-  int en;
-  int boy;
-  int agirlik;
-  int desi;
+  double en;
+  double boy;
+  double agirlik;
+  double desi;
   final _degerKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,7 @@ class desihes extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(child: Image.asset('images/box.png')),
+                  SizedBox(height: 30),
                   Text(
                     "KARGO DESİ HESAPLAMA",
                     textAlign: TextAlign.center,
@@ -52,7 +53,7 @@ class desihes extends StatelessWidget {
                         )),
                     keyboardType: TextInputType.number,
                     onSaved: (parse) {
-                      en = int.parse(parse);
+                      en = double.parse(parse);
                     },
                   ),
                   SizedBox(height: 15),
@@ -69,7 +70,7 @@ class desihes extends StatelessWidget {
                         )),
                     keyboardType: TextInputType.number,
                     onSaved: (parse) {
-                      boy = int.parse(parse);
+                      boy = double.parse(parse);
                     },
                   ),
                   SizedBox(height: 15),
@@ -86,7 +87,7 @@ class desihes extends StatelessWidget {
                         )),
                     keyboardType: TextInputType.number,
                     onSaved: (parse) {
-                      agirlik = int.parse(parse);
+                      agirlik = double.parse(parse);
                     },
                   ),
                   SizedBox(height: 20),
@@ -106,13 +107,14 @@ class desihes extends StatelessWidget {
                         onPressed: () {
                           _degerKey.currentState.save();
                           debugPrint("EN: $en, BOY: $boy, AĞIRLIK : $agirlik");
-                          desi = en * boy * agirlik;
+                          desi = (en * boy * agirlik) / 3000;
                           if (en != 0 && boy != 0 && agirlik != 0) {
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text("Desi Hesaplama Sonucu : $desi"),
+                                  title: Text(
+                                      "Desi Hesaplama Sonucu : $desi, desidir."),
                                   actions: [
                                     MaterialButton(
                                       child: Text("Tekrar Hesapla"),
