@@ -113,8 +113,9 @@ class desihes extends StatelessWidget {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
+                                  backgroundColor: Colors.amber[300],
                                   title: Text(
-                                      "Desi Hesaplama Sonucu : $desi, desidir."),
+                                      "Desi Hesaplama Sonucu : $desi desidir."),
                                   actions: [
                                     MaterialButton(
                                       child: Text("Tekrar Hesapla"),
@@ -131,6 +132,7 @@ class desihes extends StatelessWidget {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
+                                  backgroundColor: Colors.amber[300],
                                   title: Text("Yanlış Giriş Yaptınız."),
                                   actions: [
                                     MaterialButton(
