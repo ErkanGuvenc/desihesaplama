@@ -29,7 +29,7 @@ class desihes extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('images/box.png'),
+                  Expanded(child: Image.asset('images/box.png')),
                   Text(
                     "KARGO DESİ HESAPLAMA",
                     textAlign: TextAlign.center,
